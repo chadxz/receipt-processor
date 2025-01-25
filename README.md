@@ -2,6 +2,8 @@
 
 An HTTP REST API that calculates points for an uploaded receipt.
 
+View the currently deployed version of the API at https://receipt-processor.fly.dev.
+
 ![](images/home.png)
 
 ## Running Locally with Docker
