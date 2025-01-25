@@ -1,0 +1,7 @@
+services:
+  receipt-processor:
+    container_name: receipt-processor
+    image: receipt-processor
+    build: .
+    ports:
+      - '3000:3000'
