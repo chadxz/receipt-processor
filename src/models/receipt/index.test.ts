@@ -1,4 +1,4 @@
-import Receipt from "./receipt";
+import Receipt from "./";
 
 describe("Receipt", () => {
   it("can be constructed", () => {
@@ -44,6 +44,6 @@ describe("Receipt", () => {
       ],
     });
 
-    expect(receipt.points).toBe(0);
+    expect(receipt.points).toBe(20);
   });
 });

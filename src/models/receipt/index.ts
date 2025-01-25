@@ -1,4 +1,5 @@
 import Item from "./item";
+import pointCalculator from "./points";
 import type { ItemConstructParams } from "./item";
 
 export interface ReceiptConstructParams {
@@ -30,14 +31,6 @@ export default class Receipt {
     this.total = params.total;
     this.items = params.items.map((ip) => new Item(ip));
 
-    this.points = this.calculatePoints();
-  }
-
-  /**
-   * Performs all calculations necessary to determine the points awarded for
-   * this receipt.
-   */
-  private calculatePoints(): number {
-    return 10;
+    this.points = pointCalculator.calculatePoints(this);
   }
 }

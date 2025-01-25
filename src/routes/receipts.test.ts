@@ -92,7 +92,7 @@ describe("receipts", () => {
         expect(res.status).toBe(200);
         expect(await res.json()).toMatchInlineSnapshot(`
           {
-            "points": 10,
+            "points": 20,
           }
         `);
       });
