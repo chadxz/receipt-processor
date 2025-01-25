@@ -11,23 +11,16 @@ describe("requestLogger", () => {
     });
 
     await testClient(app).index.$get("/");
-    expect(logger.info.mock.calls).toMatchInlineSnapshot(`
-      [
-        [
-          "Request",
-          {
-            "request": {
-              "method": "GET",
-              "path": "/",
-            },
-            "response": {
-              "ok": "true",
-              "status": 200,
-              "time": "1ms",
-            },
-          },
-        ],
-      ]
-    `);
+    expect(logger.info).toHaveBeenCalledWith("Request", {
+      request: {
+        method: "GET",
+        path: "/",
+      },
+      response: {
+        ok: "true",
+        status: 200,
+        time: expect.any(String),
+      },
+    });
   });
 });

@@ -7,6 +7,7 @@ const logger = winston.createLogger({
   defaultMeta: { service: "receipt-processor" },
   transports: [
     new winston.transports.Console({
+      silent: config.nodeEnv === "test",
       format:
         config.nodeEnv === "production"
           ? winston.format.json()
