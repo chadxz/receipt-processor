@@ -3,7 +3,7 @@ import receiptSchema from "./schemas/receipt.js";
 import logger from "../logger";
 import receipts from "../models/receipts";
 
-export default new OpenAPIHono({
+const receiptsRouter = new OpenAPIHono({
   defaultHook: (result, c) => {
     if (!result.success) {
       const formatted = result.error.format();
@@ -45,6 +45,9 @@ export default new OpenAPIHono({
               }),
             },
           },
+        },
+        400: {
+          $ref: "#/components/responses/BadRequest",
         },
       },
     }),
@@ -116,3 +119,13 @@ export default new OpenAPIHono({
       return c.json({ points: receipt.points }, 200);
     },
   );
+
+receiptsRouter.openAPIRegistry.registerComponent("responses", "BadRequest", {
+  description: "The receipt is invalid.",
+});
+
+receiptsRouter.openAPIRegistry.registerComponent("responses", "NotFound", {
+  description: "No receipt found for that ID.",
+});
+
+export default receiptsRouter;

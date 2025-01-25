@@ -2,6 +2,8 @@
 
 An HTTP REST API that calculates points for an uploaded receipt.
 
+![](images/home.png)
+
 ## Running Locally with Docker
 
 If you only want to see the application running, you can run it with Docker.
