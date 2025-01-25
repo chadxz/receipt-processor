@@ -1,3 +1,4 @@
+$schema: https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/github-workflow.json
 name: CI
 
 on:
@@ -8,6 +9,7 @@ on:
       - main
 jobs:
   main:
+    name: Build and Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -32,3 +34,16 @@ jobs:
 
       - name: Build Docker image
         run: docker compose build
+  deploy:
+    name: Deploy to Fly.io
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    concurrency: deploy-group
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: superfly/flyctl-actions/setup-flyctl@v1
+
+      - run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
