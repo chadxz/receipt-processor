@@ -1,4 +1,3 @@
-$schema: https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/github-workflow.json
 name: CI
 
 on:
