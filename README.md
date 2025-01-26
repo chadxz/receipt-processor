@@ -1,8 +1,11 @@
+[![CI](https://github.com/chadxz/receipt-processor/actions/workflows/ci.yml/badge.svg)](https://github.com/chadxz/receipt-processor/actions/workflows/ci.yml)
+
 # Receipt Processor
 
 An HTTP REST API that calculates points for an uploaded receipt.
 
-View the currently deployed version of the API at https://receipt-processor.fly.dev.
+View the currently deployed version of the API at
+https://receipt-processor.fly.dev.
 
 ![](images/home.png)
 
