@@ -29,6 +29,16 @@ app.get(
   }),
 );
 
+app.notFound((c) => {
+  return c.json({ message: "Not found" }, { status: 404 });
+});
+
+app.onError((error, c) => {
+  logger.error("Unhandled error", { error });
+  const message = "Internal server error";
+  return c.json({ message }, { status: 500 });
+});
+
 // noinspection JSUnusedGlobalSymbols -- Required for @hono/vite-build/node
 export default app;
 
