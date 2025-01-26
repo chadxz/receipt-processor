@@ -12,7 +12,11 @@ interface InfoLogger {
  * @example
  *
  * ```ts
- * app.use(requestLogger());
+ * import logger from "./logger"; // Winston logger
+ *
+ * const app = new Hono();
+ * app.use(requestLogger(logger));
+ * ...
  * ```
  */
 export default function requestLogger(logger: InfoLogger): MiddlewareHandler {
