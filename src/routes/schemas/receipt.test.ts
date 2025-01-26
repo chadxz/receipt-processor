@@ -30,7 +30,7 @@ describe("Receipt JSON Schema", () => {
         {
           "validation": "regex",
           "code": "invalid_string",
-          "message": "Retailer name may only contain letters, numbers, spaces, hyphens, and ampersands.",
+          "message": "Retailer name must be defined and may only contain letters, numbers, spaces, hyphens, and ampersands.",
           "path": [
             "retailer"
           ]

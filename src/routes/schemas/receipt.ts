@@ -7,7 +7,7 @@ export default z
       .string()
       .regex(
         /^[\w\s\-&]+$/,
-        "Retailer name may only contain letters, numbers, spaces, hyphens, and ampersands.",
+        "Retailer name must be defined and may only contain letters, numbers, spaces, hyphens, and ampersands.",
       )
       .openapi({
         example: "M&M Corner Market",

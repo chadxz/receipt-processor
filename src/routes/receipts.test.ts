@@ -21,11 +21,14 @@ describe("receipts", () => {
         });
         expect(await res.json()).toMatchInlineSnapshot(`
           {
-            "_errors": [],
-            "items": {
-              "_errors": [
-                "Array must contain at least 1 element(s)",
-              ],
+            "message": "There was a problem validating your request.",
+            "problems": {
+              "_errors": [],
+              "items": {
+                "_errors": [
+                  "Array must contain at least 1 element(s)",
+                ],
+              },
             },
           }
         `);

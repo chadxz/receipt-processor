@@ -22,7 +22,7 @@ describe("Item JSON Schema", () => {
         {
           "validation": "regex",
           "code": "invalid_string",
-          "message": "Item short description may only contain letters, numbers, spaces, and hyphens.",
+          "message": "Item short description must be defined and may only contain letters, numbers, spaces, and hyphens.",
           "path": [
             "shortDescription"
           ]

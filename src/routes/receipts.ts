@@ -8,7 +8,13 @@ const receiptsRouter = new OpenAPIHono({
     if (!result.success) {
       const formatted = result.error.format();
       logger.error("Request validation error", { error: formatted });
-      return c.json(formatted, 400);
+      return c.json(
+        {
+          message: "There was a problem validating your request.",
+          problems: formatted,
+        },
+        400,
+      );
     }
   },
 })

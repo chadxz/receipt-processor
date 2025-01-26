@@ -6,7 +6,7 @@ export default z
       .string()
       .regex(
         /^[\w\s-]+$/,
-        "Item short description may only contain letters, numbers, spaces, and hyphens.",
+        "Item short description must be defined and may only contain letters, numbers, spaces, and hyphens.",
       )
       .openapi({
         example: "Mountain Dew 12PK",
