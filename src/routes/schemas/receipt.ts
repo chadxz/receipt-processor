@@ -1,5 +1,5 @@
 import { z } from "@hono/zod-openapi";
-import itemSchema from "./item.js";
+import itemSchema from "./item";
 
 export default z
   .object({

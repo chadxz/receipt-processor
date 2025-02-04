@@ -6,6 +6,7 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
+    "moduleResolution": "bundler",
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "strict": true,
@@ -14,6 +15,6 @@
     "module": "preserve",
     "noEmit": true,
     "lib": ["es2022"],
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "vite/client"]
   }
 }

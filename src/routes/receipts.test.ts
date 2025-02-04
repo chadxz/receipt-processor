@@ -1,5 +1,5 @@
 import { testClient } from "hono/testing";
-import app from "./receipts.js";
+import app from "./receipts";
 import receipts, { clearReceipts } from "../models/receipts";
 
 describe("receipts", () => {

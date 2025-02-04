@@ -1,14 +1,15 @@
+import "./instrumentation";
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { apiReference } from "@scalar/hono-api-reference";
 import { prettyJSON } from "hono/pretty-json";
-import receipts from "./routes/receipts.js";
+import receipts from "./routes/receipts";
 import config from "./config";
 import logger from "./logger";
-import requestLogger from "./middleware/requestLogger";
+import instrument from "./middleware/instrument";
 
 const app = new OpenAPIHono();
+app.use(instrument({ tracerName: "receipt-processor" }));
 app.use(prettyJSON());
-app.use(requestLogger(logger));
 app.route("/", receipts);
 app.doc31("/openapi.json", (c) => ({
   openapi: "3.1.0",

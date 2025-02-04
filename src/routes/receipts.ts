@@ -1,5 +1,5 @@
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
-import receiptSchema from "./schemas/receipt.js";
+import receiptSchema from "./schemas/receipt";
 import logger from "../logger";
 import receipts from "../models/receipts";
 
